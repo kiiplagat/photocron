@@ -6,6 +6,12 @@ import UploadProgressWidget from "@/components/UploadProgressWidget";
 export const metadata: Metadata = {
   title: "Photochron",
   description: "Photos, arranged by when they happened, not when you posted them.",
+  manifest: "/manifest.json",
+  themeColor: "#151313",
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/icon-192.png",
+  },
 };
 
 export default function RootLayout({
