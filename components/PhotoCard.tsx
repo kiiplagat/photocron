@@ -51,8 +51,11 @@ export default function PhotoCard({
   }
 
   return (
-    <article className="mb-6 overflow-hidden rounded-lg border border-border bg-panel">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
+    <article
+      className={`mb-6 overflow-hidden rounded-lg border border-border bg-panel ${
+        menuOpen ? "relative z-20" : ""
+      }`}
+    >      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={photo.image_url} alt={photo.caption ?? "Photo"} className="w-full object-cover" />
 
       {editing ? (
@@ -124,7 +127,7 @@ export default function PhotoCard({
                   ⋯
                 </button>
                 {menuOpen && (
-                  <div className="absolute right-0 top-6 z-10 w-28 rounded border border-border bg-panel py-1 shadow-lg">
+                  <div className="absolute bottom-6 right-0 z-20 w-28 rounded border border-border bg-panel py-1 shadow-lg">
                     <button
                       onClick={() => {
                         setEditing(true);
